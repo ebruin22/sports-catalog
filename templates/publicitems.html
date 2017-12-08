@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+{% block content %}
+    <div class='pane'>
+        <div class='header'>
+            <h1>{{ category.name }}</h1>
+        </div>
+        <div class='flash'>
+            <!-- To print messages to user -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li><strong>{{ message }}</strong></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <!-- logical code, does something but does not print -->
+        {% if items !=[] %}
+            {% for i in items %}
+            <div class='item col-md-6 col-lg-4 item-tile text-center'>
+                <div class='info'>
+                    <!-- print code-double brackets will print out -->
+                    <h3>{{i.name}}</h3>
+                    <!-- print code-double brackets will print out -->
+                    <p><img src='{{i.image}}'></p>
+                    <p>{{i.description}}</p>
+                    <p>{{i.price}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

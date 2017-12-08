@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='container'>
+        <div class='row'>
+            <div class='side-nav col-md-2'>
+                <div class="nav-header">
+                    <h4> Product Categories</h4>
+                </div>
+                <div class='flash'>
+                    <!-- To print messages to user -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul>
+                            {% for message in messages %}
+                                <li><strong>{{ message }}</strong></li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="nav">
+                    <p><a href="{{url_for('newCategory')}}">Add new category</a></p>
+                </div>
+                <!-- logical code, does something but does not print -->
+                {% if categories %}
+                    {% for c in categories %}
+                        <div class='categories'>
+                            <div class='name'>
+                                <!-- print code-double brackets will print out -->
+                                <p><a href="{{url_for('showItems', category_id=c.id)}}">{{c.name}}</a></p>
+                            </div>
+                            <div class='editdeletepane'>
+                                <!-- To add an edit link -->
+                                <p><a href="{{url_for('editCategory', category_id=c.id)}}">Edit</a> |
+                                <a href="{{url_for('deleteCategory',  category_id=c.id)}}">Delete</a></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="main-img col-md-10">
+                <img src="https://image.shutterstock.com/z/stock-photo-huge-multi-sports-collage-soccer-basketball-football-hockey-baseball-boxing-etc-650017768.jpg" alt="people playing sports">
+            </div>
+        </div>
+    </div>
+{% endblock %}

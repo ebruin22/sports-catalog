@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='content'>
+        <div class='header'>
+            <h1>{{ category.name }}</h1>
+        </div>
+        <div class='flash'>
+            <!-- To print messages to user -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li><strong>{{ message }}</strong></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="nav">
+            <p><a href="{{url_for('newItem', category_id=category_id)}}">Add new item</a></p>
+        </div>
+        <!-- logical code, does something but does not print -->
+    {% if items !=[] %}
+            {% for i in items %}
+                <div class='item col-md-6 col-lg-4 item-tile text-center'>
+                    <div class='info'>
+                        <!-- print code-double brackets will print out -->
+                        <h3>{{i.name}}</h3>
+                        <!-- print code-double brackets will print out -->
+                        <p><img src='{{i.image}}'></p>
+                        <!-- print code-double brackets will print out -->
+                        <p>{{i.description}}</p>
+                        <!-- print code-double brackets will print out -->
+                        <p>{{i.price}}</p>
+                        <div class='editdeletepane'>
+                            <!-- To add an edit link -->
+                            <p><a href="{{url_for('editItem',category_id=category_id, item_id=i.id)}}">Edit</a></p>
+                        </div>
+                        <div class='delete'>
+                            <!-- to add a delete link -->
+                            <p><a href="{{url_for('deleteItem', category_id=category_id, item_id=i.id)}}">Delete</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+.content {
+    width: 85%;
+    margin: 0 auto;
+}
+.logo {
+    margin-left: 30px;
+}
+.logo-img {
+    width:100px;
+    height: 100px;
+    vertical-align: middle;
+    margin: 20px 10px;
+}
+h1 {
+    margin: 20px 10px;
+}
+img {
+    width: 100%;
+}
+.side-nav {
+    margin-top: 1em;
+}
+.row {
+    margin-top: 2em;
+}
+.item-tile {
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+.info {
+    font-size: 14px;
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+    width: 70%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left:auto;
+    padding: 5px;
+    text-align: left;
+    color: #00045D;
+    font-weight: 600;
+}
+.home {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    margin-left: 2em;
+}
+#footer {
+    display: block;
+    margin-left: 4em;
+    margin-top: 8em;
+}
+#content {
+    width: 85%;
+    margin: 0 auto;
+}
+footer {
+    margin-left: 4em;
+    margin-top: 35em;
+}
+.nav a {
+    color: red;
+    font-size: 1em;
+}
+.categories {
+    margin-top: .5em;
+}
+.editdeletepane .delete {
+    font-size: .75em;
+    color: black;
+}
