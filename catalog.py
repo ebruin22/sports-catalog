@@ -21,7 +21,7 @@ CLIENT_ID = json.loads(open('client_secret.json', 'r').read())['web']['client_id
 
 app = Flask(__name__)
 
-engine = create_engine('postgresql://catalog:@pple2017!@18.216.230.178/inventory')
+engine = create_engine('postgresql://catalog:XXXXXX@55.555.555.555/inventory')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
